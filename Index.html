@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bus Pass System</h1>
+
+    <h3>Login</h3>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="register()">Register</button>
+
+    <div id="app" style="display:none;">
+        <h3>Request a Bus Pass</h3>
+        <input type="text" id="personName" placeholder="Enter Name">
+        <select id="category">
+            <option value="beneficiary">Beneficiary</option>
+            <option value="transitional">Transitional</option>
+            <option value="live-in">Live-In</option>
+        </select>
+        <input type="date" id="date">
+        <input type="time" id="time">
+        <button onclick="requestPass()">Request Pass</button>
+
+        <h3>Pass History</h3>
+        <button onclick="exportCSV()">Export CSV</button>
+        <input type="text" id="search" placeholder="Search by Name" onkeyup="loadHistory()">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="history"></tbody>
+        </table>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
